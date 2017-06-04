@@ -22,7 +22,7 @@ if (isset($_POST['BUTTON']))
     {
          //shell_exec("echo \"\"");
          echo "<pre>";
-         $pressed = $_POST['BUTTON']);
+         $pressed = $_POST['BUTTON'];
          print_r($_POST['BUTTON']);
          echo "</pre>";
          shell_exec("pushd .. 2>&1 > /dev/null && ./UPDATE.sh ${pressed}.mt 2>&1 >> /dev/null && popd 2>&1 >/dev/null");
