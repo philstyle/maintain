@@ -15,7 +15,7 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  #HTML NAME
  if [ "${FOLDER}" = "." ]; then
   for PERSON in `cat PEEPS`; do
-   NAMES=${NAMES}"<button name=\"${NAME}\">${NAME} - ${PERSON}</button>&nbsp;&nbsp;"
+   NAMES=${NAMES}"<button name=\"${NAME}\">${NAME} - ${PERSON}</button>&nbsp;&nbsp;&nbsp;&nbsp;"
   done
   NAME=${BEGINNING}${NAMES}${END}
  else
