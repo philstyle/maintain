@@ -27,7 +27,7 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
   done
   NAME=${BEGINNING}${NAMES}${END}
  else
-  NAME=${BEGINNING}"<button style=\"width:100%\;height:100%;" name=\"BUTTON\" value=\"${NAME}\">${NAME}</button>"${END}
+  NAME=${BEGINNING}"<button style=\"width:100%;height:100%;\" name=\"BUTTON\" value=\"${NAME}\">${NAME}</button>"${END}
  fi
  
  printf "%s" "${NAME}"
