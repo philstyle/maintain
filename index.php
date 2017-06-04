@@ -30,7 +30,7 @@ if (isset($_POST['BUTTON']))
     }
     
 
-$output = shell_exec('FOLDER_STATUS.sh| sort -rk16');
+$output = shell_exec('FOLDER_STATUS.sh| sort -rk18');
 header("Refresh: 30;");
 echo "<table>";
 echo "${output}";
