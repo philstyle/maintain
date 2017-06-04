@@ -21,10 +21,10 @@ td {
 if (isset($_POST['BUTTON']))
     {
          //shell_exec("echo \"\"");
-         echo "<pre>";
+       //  echo "<pre>";
          $pressed = $_POST['BUTTON'];
-         print_r($_POST['BUTTON']);
-         echo "</pre>";
+        // print_r($_POST['BUTTON']);
+        // echo "</pre>";
          $DIR=getcwd();
          shell_exec("pushd .. 2>&1 > /dev/null && ./UPDATE.sh ${DIR}/${pressed}.mt 2>&1 >> /dev/null && popd 2>&1 >/dev/null");
          echo "<meta http-equiv='refresh' content='0'>";
@@ -33,7 +33,7 @@ if (isset($_POST['BUTTON']))
 
 $DIR=getcwd();
 $output = shell_exec("pushd .. 2>&1 > /dev/null && ./FOLDER_STATUS.sh $DIR| sort -rk8 && popd 2>&1 >/dev/null");
-
+header("Refresh: 30;");
 echo "<table>";
 echo "${output}";
 echo "</table>"
