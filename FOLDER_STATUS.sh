@@ -15,7 +15,7 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  if [ ${EXITVAL} -gt "0" ]; then
   BEGINNING="<tr style=\"background-color:#dd3b3b\"><td><form method=\"post\">"
  else
-  BEGINNING="<tr><td><form method=\"post\">"
+  BEGINNING="<tr style=\"background-color:#ffffff\"><td><form method=\"post\">"
  fi
  NAME=`echo ${FILE}| awk -F'.' '{print $1}'`
  END="</td><td><pre>"
