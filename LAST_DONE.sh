@@ -21,7 +21,7 @@ LINE=`tail -n1 ${THING}`
 WHEN=`echo ${LINE} | awk '{print $1}'`
 
 #CHECK WHAT KIND OF DATE WE ARE WORKING WITH
-DATE_TEST=`date -r1 +%s 2>&1 >> /dev/null` >> /dev/null
+DATE_TEST=`date -r1 +%s 2> /dev/null` >> /dev/null
 if [ "${DATE_TEST}" != "1" ]; then
  #-r doesn't work, hope --date='@seconds' works
  WHEN_DAY=`date -d@"${WHEN}" +%j`
