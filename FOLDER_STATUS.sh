@@ -22,5 +22,5 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  EXITVAL=$?
  #echo $OUTPUT ${EXITVAL}
  printf "\t%s\t%s"  ${OUTPUT} ${EXITVAL}
- echo ""
+ #echo ""
 done

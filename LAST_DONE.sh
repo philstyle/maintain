@@ -30,7 +30,7 @@ DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
 #printf "%s\t\t%s\t\t%s\t%s" "DATE" "TIME" "SINCE" "WHO"
 #echo ""
 printf "%s\t%s\t%s\t%s" `date -r${WHEN} "+%Y-%m-%d %H:%M:%S"` $DAYS_SINCE_DONE $WHO
-echo ""
+#echo ""
 #echo `date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`" -- $DAYS_SINCE_DONE -- $WHO"
 if [ $DIFF -gt 0 ]; then
  exit $DIFF 
