@@ -13,7 +13,7 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  EXITVAL=$?
  #if exitval > 0, color row red
  if [ ${EXITVAL} -gt "0" ]; then
-  BEGINNING="<tr style=\"background-color:red\"><td><form method=\"post\">"
+  BEGINNING="<tr style=\"background-color:#f44242\"><td><form method=\"post\">"
  else
   BEGINNING="<tr><td><form method=\"post\">"
  fi
