@@ -22,7 +22,7 @@ if (isset($_POST['CAT_POOP']))
     {
          //shell_exec("echo \"\"");
          echo "<pre>";
-         print_r($_POST);
+         print_r($_POST['CAT_POOP']);
          echo "</pre>";
          //echo "<meta http-equiv='refresh' content='0'>";
     }
