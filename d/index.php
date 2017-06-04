@@ -25,7 +25,8 @@ if (isset($_POST['BUTTON']))
          $pressed = $_POST['BUTTON'];
          print_r($_POST['BUTTON']);
          echo "</pre>";
-         shell_exec("pushd .. 2>&1 > /dev/null && ./UPDATE.sh ${pressed}.mt 2>&1 >> /dev/null && popd 2>&1 >/dev/null");
+         $DIR=getcwd();
+         shell_exec("pushd .. 2>&1 > /dev/null && ./UPDATE.sh ${DIR}/${pressed}.mt 2>&1 >> /dev/null && popd 2>&1 >/dev/null");
          //echo "<meta http-equiv='refresh' content='0'>";
     }
     
