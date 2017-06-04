@@ -22,10 +22,10 @@ if (isset($_POST['BUTTON']))
     {
          //shell_exec("echo \"\"");
          echo "<pre>";
-         $pressed = explode("-",$_POST['BUTTON']);
-         print_r(explode("-",$_POST['BUTTON']));
+         $pressed = $_POST['BUTTON']);
+         print_r($_POST['BUTTON']);
          echo "</pre>";
-         shell_exec("pushd .. 2>&1 > /dev/null && ./UPDATE.sh ${pressed[0]}.mt ${pressed[1]} 2>&1 >> /dev/null && popd 2>&1 >/dev/null");
+         shell_exec("pushd .. 2>&1 > /dev/null && ./UPDATE.sh ${pressed}.mt 2>&1 >> /dev/null && popd 2>&1 >/dev/null");
          //echo "<meta http-equiv='refresh' content='0'>";
     }
     
