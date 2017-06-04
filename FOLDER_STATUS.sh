@@ -9,15 +9,26 @@ fi
 for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
 
  NAME=`echo ${FILE}| awk -F'.' '{print $1}'`
+ BEGINNING="<tr><td><form method=\"post\">
+ END="</td><td><pre>"
+ NAMES=""
  #HTML NAME
- NAME="<tr><td><form method=\"post\"><button name=\"button\">${NAME}</button></td><td><pre>"
+ if [ "${FOLDER}" = "." ]; then
+  for PERSON in `cat PEEPS`; do
+   NAMES=${NAMES}"<button name=\"${NAME}\">${NAME} - ${PERSON}</button>"
+  done
+  NAME=${BEGINNING}${NAMES}${END}
+ else
+  NAME=${BEGINNING}"<button name=\"${NAME}\">${NAME}</button>"${END}
+ fi
+ 
  printf "%s" "${NAME}"
- if [ ${#NAME} -lt "8" ]; then
-  printf "\t"
- fi
- if [ ${#NAME} -lt "16" ]; then
-  printf "\t"
- fi
+# if [ ${#NAME} -lt "8" ]; then
+#  printf "\t"
+# fi
+# if [ ${#NAME} -lt "16" ]; then
+#  printf "\t"
+# fi
  OUTPUT=`./LAST_DONE.sh ${FOLDER}/${FILE}`
  EXITVAL=$?
  #echo $OUTPUT ${EXITVAL}
