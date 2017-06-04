@@ -4,9 +4,12 @@
 table {
     border-collapse: collapse;
     border: 1px solid black;
+    height: 100%
+    width: 100%
 }
 tr {
  border: 1px solid black;
+ height: 100%
 }
 </style>
 </head>
