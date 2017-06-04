@@ -14,6 +14,3 @@ if [ ! -f ${THING} ]; then
 fi
 
 date "+%s ${WHO}" >> ${THING}
-git add ${THING}
-git commit -m "${THING} updated by ${WHO}"
-git push origin master
