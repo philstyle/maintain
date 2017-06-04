@@ -13,7 +13,7 @@ if [ ! -f ${THING} ]; then
  exit 0
 fi
 
-date "+%Y-%m-%d %H:%M:%S ${WHO}" >> ${THING}
+date "+%s ${WHO}" >> ${THING}
 git add ${THING}
 git commit -m "${THING} updated by ${WHO}"
 git push origin master

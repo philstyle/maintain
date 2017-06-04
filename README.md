@@ -10,7 +10,10 @@ Common things have an extra column of 'who' based on options presented at submit
 
 First row of each file defines frequency (#/week/month/year)
 subsequent rows are 
-date	time	(person)
+seconds_since_epoch	(person)
 
 
-date "+%Y-%m-%d %H:%M:%S"
+
+
+
+date -r${TIME} "+%Y-%m-%d %H:%M:%S" #-> nice looking
