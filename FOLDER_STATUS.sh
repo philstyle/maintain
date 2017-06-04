@@ -9,7 +9,7 @@ fi
 for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
 
  NAME=`echo ${FILE}| awk -F'.' '{print $1}'`
- BEGINNING="<tr><td><form method=\"post\">
+ BEGINNING="<tr><td><form method=\"post\">"
  END="</td><td><pre>"
  NAMES=""
  #HTML NAME
