@@ -12,10 +12,6 @@ fi
 
 FREQ=`head -n1 ${THING} | awk '{print $1}'`
 
-
-
-
-
 LINE=`tail -n1 ${THING}`
 #SECONDS_SINCE_EPOCH WHO
 WHEN=`echo ${LINE} | awk '{print $1}'`
@@ -45,7 +41,7 @@ DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
 
 #printf "%s\t\t%s\t\t%s\t%s" "DATE" "TIME" "SINCE" "WHO"
 #echo ""
-printf "%s\t%s\t%s\t%s" $PRETTYDATE $DAYS_SINCE_DONE $WHO
+printf "%s\t%s\t%s\t%s\t$s" $PRETTYDATE $DAYS_SINCE_DONE $WHO $FREQ
 #echo ""
 #echo `date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`" -- $DAYS_SINCE_DONE -- $WHO"
 if [ $DIFF -gt 0 ]; then
