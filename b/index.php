@@ -5,7 +5,7 @@ if (isset($_POST['button']))
     }
 
 $DIR=getcwd();    
-$output = shell_exec("FOLDER_STATUS.sh $DIR| sort -rk13");
+$output = shell_exec("pushd .. 2>&1 > /dev/null && ./FOLDER_STATUS.sh $DIR| sort -rk8 && popd 2>&1 >/dev/null");
 echo "<table>";
 echo "${output}";
 echo "</table>"
