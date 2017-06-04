@@ -15,11 +15,11 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  #HTML NAME
  if [ "${FOLDER}" = "." ]; then
   for PERSON in `cat PEEPS`; do
-   NAMES=${NAMES}"<button name=\"${NAME}\" value=\"${PERSON}\">${NAME} - ${PERSON}</button>&nbsp;&nbsp;&nbsp;&nbsp;"
+   NAMES=${NAMES}"<button name=\"BUTTON\" id=\"${NAME}\" value=\"${PERSON}\">${NAME} - ${PERSON}</button>&nbsp;&nbsp;&nbsp;&nbsp;"
   done
   NAME=${BEGINNING}${NAMES}${END}
  else
-  NAME=${BEGINNING}"<button name=\"${NAME}\">${NAME}</button>"${END}
+  NAME=${BEGINNING}"<button name=\"BUTTON\" d=\"${NAME}\">${NAME}</button>"${END}
  fi
  
  printf "%s" "${NAME}"
