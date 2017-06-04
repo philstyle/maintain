@@ -24,8 +24,8 @@ WHEN=`echo ${LINE} | awk '{print $1}'`
 DATE_TEST=`date -r1 +%s` 2>&1 >> /dev/null
 if [ "${DATE_TEST}" != "1" ]; then
  #-r doesn't work, hope --date='@seconds' works
- WHEN_DAY=`date --date@'${WHEN}' +%j`
- PRETTYDATE=`date --date@'${WHEN}' "+%Y-%m-%d %H:%M:%S"`
+ WHEN_DAY=`date --date@"${WHEN}" +%j`
+ PRETTYDATE=`date --date@"${WHEN}" "+%Y-%m-%d %H:%M:%S"`
 else
  WHEN_DAY=`date -r${WHEN} +%j`
  PRETTYDATE=`date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`
