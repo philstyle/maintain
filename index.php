@@ -10,12 +10,3 @@ $output = shell_exec('FOLDER_STATUS.sh');
 //echo "<html><body>"
 echo "${output}";
 ?>
-
-//<html><body>
-//   <form method="post">
-//   <p>
-//        <button name="button">POOP</button>
-//    </p>
-//    </form>
-</body>
-</html>
