@@ -22,7 +22,8 @@ if (isset($_POST['BUTTON']))
     {
          //shell_exec("echo \"\"");
          echo "<pre>";
-         print_r($_POST);
+         $pressed = $_POST['BUTTON'];
+         print_r(explode("-",$_POST['BUTTON']));
          echo "</pre>";
          //echo "<meta http-equiv='refresh' content='0'>";
     }
