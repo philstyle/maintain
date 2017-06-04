@@ -18,11 +18,11 @@ td {
 <body>
 
 <?php
-if (isset($_POST['button']))
+if (isset($_POST['CAT_POOP']))
     {
          //shell_exec("echo \"\"");
          echo "<pre>";
-         printr($_POST);
+         print_r($_POST);
          echo "</pre>";
          //echo "<meta http-equiv='refresh' content='0'>";
     }
