@@ -1,8 +1,12 @@
 <?php
 if (isset($_POST['button']))
     {
-         exec('FOLDER_STATUS.sh');
+         echo "poop";
     }
+    
+
+$output = shell_exec('FOLDER_STATUS.sh');
+echo "<pre>$output</pre>";
 ?>
 
 <html>
