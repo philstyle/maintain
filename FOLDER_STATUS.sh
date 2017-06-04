@@ -17,7 +17,7 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
   for PERSON in `cat PEEPS`; do
    NAMES=${NAMES}"<td><button name=\"${NAME}\">${NAME} - ${PERSON}</button></td>"
   done
-  NAME=${BEGINNING}"<table><tr>"${NAMES}${END}"</tr><table>"
+  NAME=${BEGINNING}"<table><tr>"${NAMES}"</tr><table>"${END}
  else
   NAME=${BEGINNING}"<button name=\"${NAME}\">${NAME}</button>"${END}
  fi
