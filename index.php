@@ -30,7 +30,7 @@ if (isset($_POST['BUTTON']))
     }
     
 
-$output = shell_exec('FOLDER_STATUS.sh| sort -rk13');
+$output = shell_exec('FOLDER_STATUS.sh| sort -rk15');
 echo "<table>";
 echo "${output}";
 echo "</table>"
