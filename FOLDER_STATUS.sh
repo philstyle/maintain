@@ -9,6 +9,8 @@ fi
 for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
 
  NAME=`echo ${FILE}| awk -F'.' '{print $1}'`
+ #HTML NAME
+ NAME='<form method="post"><p> <button name="button">${NAME}</button></p></form>'
  printf "%s" ${NAME}
  if [ ${#NAME} -lt "8" ]; then
   printf "\t"
