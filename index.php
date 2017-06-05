@@ -11,25 +11,27 @@ table {
     background-color: #4ca3af;
     border: none;
     color: black;
-    padding: 5px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
+    padding: 5px 10px;
+    width: 85%;
 }
 .button2 {
     background-color: #608be0;
     border: none;
     color: black;
-    padding: 5px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
+    padding: 8px 10px;
+    width: 85%;
 }
 .button1:hover {
     background-color: #4CAF50; /* Green */
@@ -44,6 +46,8 @@ tr {
 }
 td {
  text-align: center;
+ font-size: 14px;
+ font-weight: bold;
 }
 </style>
 </head>
@@ -62,7 +66,7 @@ if (isset($_POST['BUTTON']))
     }
     
 
-$output = shell_exec('FOLDER_STATUS.sh| sort -rk18');
+$output = shell_exec('FOLDER_STATUS.sh| sort -rk16');
 header("Refresh: 30;");
 echo "<table>";
 echo "${output}";

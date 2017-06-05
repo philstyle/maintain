@@ -18,13 +18,13 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
   BEGINNING="<tr style=\"background-color:#ffffff\"><td><form method=\"post\">"
  fi
  NAME=`echo ${FILE}| awk -F'.' '{print $1}'`
- END="</td><td><pre>"
+ END="</td><td>"
  NAMES=""
  #HTML NAME
  VAL=1
  if [ "${FOLDER}" = "." ]; then
   for PERSON in `cat PEEPS`; do
-   NAMES=${NAMES}"<button class=\"button${VAL}\" name=\"BUTTON\" value=\"${NAME}-${PERSON}\">${NAME} - ${PERSON}</button>&nbsp;&nbsp;&nbsp;&nbsp;"
+   NAMES=${NAMES}"<button class=\"button${VAL}\" name=\"BUTTON\" value=\"${NAME}-${PERSON}\">${NAME} - ${PERSON}</button>"
    VAL=$((VAL + 1))
   done
   NAME=${BEGINNING}${NAMES}${END}
@@ -34,9 +34,12 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  
  printf "%s" "${NAME}"
  
+ DAT=`echo ${OUTPUT} | awk '{print $1,$2}'`
+ SINCE=`echo ${OUTPUT} | awk '{print $3}'`
+ WHO=`echo ${OUTPUT} | awk '{print $4}'`
+ FREQ=`echo ${OUTPUT} | awk '{print $5}'`
  
- 
- printf "\t%s\t%s"  ${OUTPUT} ${EXITVAL}
- printf "</pre></form></td></tr>"
+ printf "%s DAYS ago</td><td>%s@%s</td><td>%s</td><td> %s " ${SINCE} ${DAT} ${WHO} ${FREQ}
+ printf "</form></td></tr>"
  echo ""
 done
