@@ -1,6 +1,40 @@
 <html>
 <head>
 <style>
+
+.button1 {
+    background-color: #4ca3af;
+    border: none;
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button2 {
+    background-color: #608be0;
+    border: none;
+    color: black;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button1:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+.button2:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
 table {
     border-collapse: collapse;
     border: 1px solid black;
