@@ -1,4 +1,4 @@
--1 week
+2 week
 1496636437 Brandi
 1496882490 Drew
 1496885789 Brandi
