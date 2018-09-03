@@ -67,7 +67,7 @@ DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
 
 #printf "%s\t\t%s\t\t%s\t%s" "DATE" "TIME" "SINCE" "WHO"
 #echo ""
-printf "%s\t%s\t%s\t%s\t%s\t%s" $PRETTYDATE $DAYS_SINCE_DONE $WHO $FREQ $PER
+printf "%s\t%s\t%s\t%s\t%s\t%s\t%s" $PRETTYDATE $DAYS_SINCE_DONE $WHO $FREQ $PER $POINTS
 #echo ""
 #echo `date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`" -- $DAYS_SINCE_DONE -- $WHO"
 if [ $DIFF -gt 0 ]; then

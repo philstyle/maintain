@@ -8,15 +8,23 @@ fi
 
 for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
 
+
  #check
  OUTPUT=`./LAST_DONE.sh ${FOLDER}/${FILE}`
  EXITVAL=$?
+
+ #HERE FOR TESTING ONY
+ POINTS=`echo ${OUTPUT} | awk '{print $7}'`
+
+
+
  #if exitval > 0, color row red
  if [ ${EXITVAL} -gt "0" ]; then
-  BEGINNING="<tr style=\"background-color:#dd3b3b\"><td><form method=\"post\">"
+  BEGINNING="<tr style=\"background-color:#dd3b3b\"><td><b>**<u>${POINTS}</u>**</b></td><td><form method=\"post\">"
  else
-  BEGINNING="<tr style=\"background-color:#ffffff\"><td><form method=\"post\">"
+  BEGINNING="<tr style=\"background-color:#ffffff\"><td><b>**<u>${POINTS}</u>**</b></td><td><form method=\"post\">"
  fi
+ 
  NAME=`echo ${FILE}| awk -F'.' '{print $1}'`
  END="</td><td>"
  NAMES=""
@@ -31,14 +39,14 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  else
   NAME=${BEGINNING}"<button class=\"button${VAL}\" name=\"BUTTON\" value=\"${NAME}\">${NAME}</button>"${END}
  fi
- 
- printf "%s" "${NAME}"
- 
+  
  DAT=`echo ${OUTPUT} | awk '{print $1,$2}'`
  SINCE=`echo ${OUTPUT} | awk '{print $3}'`
  WHO=`echo ${OUTPUT} | awk '{print $4}'`
  FREQ=`echo ${OUTPUT} | awk '{print $5}'`
  PER=`echo ${OUTPUT} | awk '{print $6}'`
+
+ printf "%s" "${NAME}"
 
  printf "</td><td><table><tr><td><b><u>%s DAYS ago</b></u></td><td>%s@%s</td></tr><tr><td>%s</td><td>FREQ: %s per %s</td></tr></table></td>" ${SINCE} ${DAT} ${WHO} ${FREQ} ${PER}
  printf "</form></td></tr>"
