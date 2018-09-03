@@ -6,25 +6,27 @@
     background-color: #4ca3af;
     border: none;
     color: black;
-    padding: 5px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 4vmin;
     font-weight: bold;
     cursor: pointer;
+    width: 10em;
+    height: 10em;
 }
 .button2 {
     background-color: #608be0;
     border: none;
     color: black;
-    padding: 5px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 4vmin;
     font-weight: bold;
     cursor: pointer;
+    width: 10em;
+    height: 10em;
 }
 .button1:hover {
     background-color: #4CAF50; /* Green */
@@ -45,6 +47,7 @@ tr {
  border: 1px solid black;
 }
 td {
+ font-size: 2vmin;
  text-align: center;
 }
 </style>

@@ -14,11 +14,10 @@ table {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 2vmin;
     cursor: pointer;
-    padding: 5px 10px;
-    width: 85%;
+    width: 30vmin;
+    height: 10vmin;
 }
 .button2 {
     background-color: #608be0;
@@ -27,11 +26,10 @@ table {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 2vmin;
     cursor: pointer;
-    padding: 8px 10px;
-    width: 85%;
+    width: 30vmin;
+    height: 10vmin;
 }
 .button1:hover {
     background-color: #4CAF50; /* Green */
@@ -46,7 +44,7 @@ tr {
 }
 td {
  text-align: center;
- font-size: 14px;
+ font-size: 2vmin;
  font-weight: bold;
 }
 </style>

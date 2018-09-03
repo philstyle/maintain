@@ -47,6 +47,11 @@ else
 fi
 
 WHO=`echo ${LINE} | awk '{print $2}'`
+
+if [ "${WHO}x" = "x" ]; then
+ WHO="you"
+fi
+
 TODAY=`date +%j`
 YEAR=`date +%Y`
 YEAR_DIFF=$((YEAR - WHEN_YEAR))

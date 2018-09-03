@@ -24,7 +24,7 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  VAL=1
  if [ "${FOLDER}" = "." ]; then
   for PERSON in `cat PEEPS`; do
-   NAMES=${NAMES}"<button class=\"button${VAL}\" name=\"BUTTON\" value=\"${NAME}-${PERSON}\">${NAME} - ${PERSON}</button>"
+   NAMES=${NAMES}"<button class=\"button${VAL}\" name=\"BUTTON\" value=\"${NAME}-${PERSON}\"><b>${NAME}</b><br><u>${PERSON}</u></button>"
    VAL=$((VAL + 1))
   done
   NAME=${BEGINNING}${NAMES}${END}
@@ -38,8 +38,9 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  SINCE=`echo ${OUTPUT} | awk '{print $3}'`
  WHO=`echo ${OUTPUT} | awk '{print $4}'`
  FREQ=`echo ${OUTPUT} | awk '{print $5}'`
- 
- printf "%s DAYS ago</td><td>%s@%s</td><td>%s</td><td> %s " ${SINCE} ${DAT} ${WHO} ${FREQ}
+ PER=`echo ${OUTPUT} | awk '{print $6}'`
+
+ printf "</td><td><table><tr><td><b><u>%s DAYS ago</b></u></td><td>%s@%s</td></tr><tr><td>%s</td><td>FREQ: %s per %s</td></tr></table></td>" ${SINCE} ${DAT} ${WHO} ${FREQ} ${PER}
  printf "</form></td></tr>"
  echo ""
 done
