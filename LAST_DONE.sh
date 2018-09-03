@@ -11,6 +11,23 @@ if [ ! -f ${THING} ]; then
 fi
 
 FREQ=`head -n1 ${THING} | awk '{print $1}'`
+PER=`head -n1 ${THING} | awk '{print $2}'`
+POINTS=`head -n1 ${THING} | awk '{print $3}'`
+
+case "$PER": in
+day)
+  SECRET=1
+  ;;
+week)
+  SECRET=7
+  ;;
+month)
+  SECRET=30
+  ;;
+*)
+  SECRET=7
+  ;;
+esac
 
 LINE=`tail -n1 ${THING}`
 #SECONDS_SINCE_EPOCH WHO
@@ -39,12 +56,13 @@ if [ "${YEAR_DIFF}" -gt "0" ]; then
 fi
 DAYS_SINCE_DONE=$((TODAY - WHEN_DAY))
 
-MAGIC_NUMBER=$((7 / FREQ))
+
+MAGIC_NUMBER=$((SECRET / FREQ))
 DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
 
 #printf "%s\t\t%s\t\t%s\t%s" "DATE" "TIME" "SINCE" "WHO"
 #echo ""
-printf "%s\t%s\t%s\t%s\t$s" $PRETTYDATE $DAYS_SINCE_DONE $WHO $FREQ
+printf "%s\t%s\t%s\t%s\t%s\t%s" $PRETTYDATE $DAYS_SINCE_DONE $WHO $FREQ $PER
 #echo ""
 #echo `date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`" -- $DAYS_SINCE_DONE -- $WHO"
 if [ $DIFF -gt 0 ]; then
