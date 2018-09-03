@@ -21,20 +21,23 @@ DATE_TEST=`date -r1 +%s 2> /dev/null` >> /dev/null
 if [ "${DATE_TEST}" != "1" ]; then
  #-r doesn't work, hope --date='@seconds' works
  WHEN_DAY=`date -d@"${WHEN}" +%j`
+ WHEN_YEAR=`date -d@"${WHEN}" +%Y`
  PRETTYDATE=`date -d@"${WHEN}" "+%Y-%m-%d %H:%M:%S"`
 else
  WHEN_DAY=`date -r${WHEN} +%j`
+ WHEN_YEAR=`date -r${WHEN} +%Y`
  PRETTYDATE=`date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`
 fi
 
 WHO=`echo ${LINE} | awk '{print $2}'`
 TODAY=`date +%j`
-#will run into issues around the newyear if you only track 'day of year'
-DAYS_SINCE_DONE=$((TODAY - WHEN_DAY))
-if [ $DAYS_SINCE_DONE -lt 0 ]; then
- #different year?
- DAYS_SINCE_DONE=$((365 + DAYS_SINCE_DONE))
+YEAR=`date +%Y`
+YEAR_DIFF=$((YEAR - WHEN_YEAR))
+if [ "${YEAR_DIFF}" -gt "0" ]; then
+  ADD=$((YEAR_DIFF * 365))
+  TODAY=$((TODAY + ADD))
 fi
+DAYS_SINCE_DONE=$((TODAY - WHEN_DAY))
 
 MAGIC_NUMBER=$((7 / FREQ))
 DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
