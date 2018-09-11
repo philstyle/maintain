@@ -10,11 +10,25 @@ if [ ! -f ${THING} ]; then
  exit 0
 fi
 
+
+return_value() {
+  INTERVAL=$1
+  FREQUENCY=$2
+  DAYS_SINCE_DONE=$3
+  HOURS_SINCE_DONE=$4
+
+  MAGIC_NUMBER=$((INTERVAL / FREQ))
+  DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
+  echo $INTERVAL
+}
+
+
+
 FREQ=`head -n1 ${THING} | awk '{print $1}'`
 PER=`head -n1 ${THING} | awk '{print $2}'`
 POINTS=`head -n1 ${THING} | awk '{print $3}'`
 
-case "$PER": in
+case $PER in
 day)
   SECRET=1
   ;;
@@ -53,6 +67,7 @@ if [ "${WHO}x" = "x" ]; then
 fi
 
 TODAY=`date +%j`
+THIS_SECOND=`date +%s`
 YEAR=`date +%Y`
 YEAR_DIFF=$((YEAR - WHEN_YEAR))
 if [ "${YEAR_DIFF}" -gt "0" ]; then
@@ -61,6 +76,11 @@ if [ "${YEAR_DIFF}" -gt "0" ]; then
 fi
 DAYS_SINCE_DONE=$((TODAY - WHEN_DAY))
 
+SECOND_DIFF=$((THIS_SECOND - DATE))
+HOUR_DIFF=$((SECOND_DIFF / 3600))
+
+#might need this in the future, problem was case
+#RETVAL=`return_value ${SECRET} ${FREQ} ${DAYS_SINCE_DONE} ${HOUR_DIFF}`
 
 MAGIC_NUMBER=$((SECRET / FREQ))
 DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
