@@ -5,6 +5,7 @@
 .button1 {
     background-color: #4ca3af;
     border: none;
+    border-radius: 6%;
     color: black;
     text-align: center;
     text-decoration: none;
@@ -12,12 +13,13 @@
     font-size: 4vmin;
     font-weight: bold;
     cursor: pointer;
-    width: 10em;
-    height: 10em;
+    width: 8em;
+    height: 8em;
 }
 .button2 {
     background-color: #608be0;
     border: none;
+    border-radius: 6%;
     color: black;
     text-align: center;
     text-decoration: none;
@@ -25,8 +27,8 @@
     font-size: 4vmin;
     font-weight: bold;
     cursor: pointer;
-    width: 10em;
-    height: 10em;
+    width: 8em;
+    height: 8em;
 }
 .button1:hover {
     background-color: #4CAF50; /* Green */
