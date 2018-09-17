@@ -9,6 +9,7 @@ table {
 }
 .button1 {
     background-color: #4ca3af;
+    border-radius: 6%;
     border: none;
     color: black;
     text-align: center;
@@ -16,11 +17,12 @@ table {
     display: inline-block;
     font-size: 2vmin;
     cursor: pointer;
-    width: 30vmin;
-    height: 10vmin;
+    width: 26vmin;
+    height: 8vmin;
 }
 .button2 {
     background-color: #608be0;
+    border-radius: 6%;
     border: none;
     color: black;
     text-align: center;
@@ -28,8 +30,8 @@ table {
     display: inline-block;
     font-size: 2vmin;
     cursor: pointer;
-    width: 30vmin;
-    height: 10vmin;
+    width: 26vmin;
+    height: 8vmin;
 }
 .button1:hover {
     background-color: #4CAF50; /* Green */
