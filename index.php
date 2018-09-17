@@ -17,8 +17,8 @@ table {
     display: inline-block;
     font-size: 2vmin;
     cursor: pointer;
-    width: 26vmin;
-    height: 8vmin;
+    width: 16vmin;
+    height: 14vmin;
 }
 .button2 {
     background-color: #608be0;
@@ -30,9 +30,23 @@ table {
     display: inline-block;
     font-size: 2vmin;
     cursor: pointer;
-    width: 26vmin;
+    width: 16vmin;
+    height: 14vmin;
+}
+.button3 {
+    background-color: #404b90;
+    border-radius: 6%;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vmin;
+    cursor: pointer;
+    width: 14vmin;
     height: 8vmin;
 }
+
 .button1:hover {
     background-color: #4CAF50; /* Green */
     color: white;
@@ -41,6 +55,11 @@ table {
     background-color: #4CAF50; /* Green */
     color: white;
 }
+.button3:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
 tr {
  border: 1px solid black;
 }

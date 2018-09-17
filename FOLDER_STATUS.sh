@@ -20,19 +20,19 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
 
  #if exitval > 0, color row red
  if [ ${EXITVAL} -gt "0" ]; then
-  BEGINNING="<tr style=\"background-color:#dd3b3b\"><td><b>**<u>${POINTS}</u>**</b></td><td><form method=\"post\">"
+  BEGINNING="<tr style=\"background-color:#dd3b3b;vertical-align:middle\"><td><b>**<u>${POINTS}</u>**</b></td><td><form style=\"padding-top:4%\" method=\"post\">"
  else
-  BEGINNING="<tr style=\"background-color:#ffffff\"><td><b>**<u>${POINTS}</u>**</b></td><td><form method=\"post\">"
+  BEGINNING="<tr style=\"background-color:#ffffff;vertical-align:middle\"><td><b>**<u>${POINTS}</u>**</b></td><td><form style=\"padding-top:4%\" method=\"post\">"
  fi
  
- NAME=`echo ${FILE}| awk -F'.' '{print $1}'`
+ NAME=`echo ${FILE}| awk -F'.' '{print $1}' | sed 's/_/ /g'`
  END="</td><td>"
  NAMES=""
  #HTML NAME
  VAL=1
  if [ "${FOLDER}" = "." ]; then
   for PERSON in `cat PEEPS`; do
-   NAMES=${NAMES}"<button class=\"button${VAL}\" name=\"BUTTON\" value=\"${NAME}-${PERSON}\"><b>${NAME}</b><br><u>${PERSON}</u></button>"
+   NAMES=${NAMES}"<button class=\"button${VAL}\" name=\"BUTTON\" value=\"${NAME}-${PERSON}\"><b>${NAME}</b><br><u>${PERSON}</u></button>&nbsp;&nbsp;"
    VAL=$((VAL + 1))
   done
   NAME=${BEGINNING}${NAMES}${END}
