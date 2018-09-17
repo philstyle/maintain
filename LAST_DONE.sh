@@ -28,21 +28,6 @@ FREQ=`head -n1 ${THING} | awk '{print $1}'`
 PER=`head -n1 ${THING} | awk '{print $2}'`
 POINTS=`head -n1 ${THING} | awk '{print $3}'`
 
-case $PER in
-day)
-  SECRET=1
-  ;;
-week)
-  SECRET=7
-  ;;
-month)
-  SECRET=30
-  ;;
-*)
-  SECRET=7
-  ;;
-esac
-
 LINE=`tail -n1 ${THING}`
 #SECONDS_SINCE_EPOCH WHO
 WHEN=`echo ${LINE} | awk '{print $1}'`
@@ -76,18 +61,41 @@ if [ "${YEAR_DIFF}" -gt "0" ]; then
 fi
 DAYS_SINCE_DONE=$((TODAY - WHEN_DAY))
 
-SECOND_DIFF=$((THIS_SECOND - DATE))
-HOUR_DIFF=$((SECOND_DIFF / 3600))
+SECOND_DIFF=$(( THIS_SECOND - WHEN ))
+HOUR_DIFF=$(( SECOND_DIFF / 3600 ))
+HOUR_DIFF=$(( HOUR_DIFF % 24 ))
+MINUTE_DIFF=$(( SECOND_DIFF / 60 ))
+MINUTE_DIFF=$(( MINUTE_DIFF % 60 ))
 
 #might need this in the future, problem was case
 #RETVAL=`return_value ${SECRET} ${FREQ} ${DAYS_SINCE_DONE} ${HOUR_DIFF}`
 
+case $PER in
+day)
+  SECRET=24
+  TIME_SINCE_DONE=$HOUR_DIFF
+  ;;
+week)
+  SECRET=7
+  TIME_SINCE_DONE=$DAYS_SINCE_DONE
+  ;;
+month)
+  SECRET=30
+  TIME_SINCE_DONE=$DAYS_SINCE_DONE
+  ;;
+*)
+  SECRET=7
+  TIME_SINCE_DONE=$DAYS_SINCE_DONE
+  ;;
+esac
+
+
 MAGIC_NUMBER=$((SECRET / FREQ))
-DIFF=$((DAYS_SINCE_DONE - MAGIC_NUMBER))
+DIFF=$((TIME_SINCE_DONE - MAGIC_NUMBER))
 
 #printf "%s\t\t%s\t\t%s\t%s" "DATE" "TIME" "SINCE" "WHO"
 #echo ""
-printf "%s\t%s\t%s\t%s\t%s\t%s\t%s" $PRETTYDATE $DAYS_SINCE_DONE $WHO $FREQ $PER $POINTS
+printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" $PRETTYDATE $DAYS_SINCE_DONE $HOUR_DIFF $MINUTE_DIFF $WHO $FREQ $PER $POINTS
 #echo ""
 #echo `date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`" -- $DAYS_SINCE_DONE -- $WHO"
 if [ $DIFF -gt 0 ]; then
