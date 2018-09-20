@@ -8,7 +8,6 @@ fi
 COLUMNS=4
 COUNT=0
 for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
-
  #check
  OUTPUT=`./LAST_DONE.sh ${FOLDER}/${FILE}`
  EXITVAL=$?
