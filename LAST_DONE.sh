@@ -63,7 +63,6 @@ DAYS_SINCE_DONE=$((TODAY - WHEN_DAY))
 
 SECOND_DIFF=$(( THIS_SECOND - WHEN ))
 HOUR_DIFF=$(( SECOND_DIFF / 3600 ))
-HOUR_DIFF=$(( HOUR_DIFF % 24 ))
 MINUTE_DIFF=$(( SECOND_DIFF / 60 ))
 MINUTE_DIFF=$(( MINUTE_DIFF % 60 ))
 
@@ -92,6 +91,9 @@ esac
 
 MAGIC_NUMBER=$((SECRET / FREQ))
 DIFF=$((TIME_SINCE_DONE - MAGIC_NUMBER))
+
+#move mod of hour_diff until after calculations
+HOUR_DIFF=$(( HOUR_DIFF % 24 ))
 
 #printf "%s\t\t%s\t\t%s\t%s" "DATE" "TIME" "SINCE" "WHO"
 #echo ""
