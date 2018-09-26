@@ -10,6 +10,7 @@ iframe {
 }
 </style>
 <iframe src="overview.php" style="height: 50%"></iframe>
-<iframe src="d/overview.php" style="height: 25%; width: 50%"></iframe><iframe src="vlf/overview.php" style="height: 25%; width: 50%"></iframe>
+<iframe src="d/overview.php" style="height: 25%; width: 50%"></iframe><iframe src="b/overview.php" style="height: 25%; width: 50%"></iframe>
+<iframe src="vlf/overview.php" style="height: 25%; width: 50%"></iframe><iframe src="occur/overview.php" style="height: 25%; width: 50%"></iframe>
 </body>
 </html>
