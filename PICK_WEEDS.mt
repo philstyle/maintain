@@ -1,4 +1,4 @@
-1 week
+1 week 3
 1496602039 Brandi
 1496609617 Brandi
 1496613913 Brandi
