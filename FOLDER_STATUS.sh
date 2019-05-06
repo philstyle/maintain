@@ -14,7 +14,7 @@ for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  EXITVAL=$?
 
  #HERE FOR TESTING ONY
- POINTS=`echo ${OUTPUT} | awk '{print $7}'`
+ POINTS=`echo ${OUTPUT} | awk '{print $9}'`
  if [ ${POINTS} -gt "0" ]; then
   OUT=""
   for i in $(seq 1 $POINTS); do 
