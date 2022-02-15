@@ -5,7 +5,7 @@ FOLDER=$1
 if [ "${FOLDER}x" = "x" ]; then
  FOLDER="."
 fi
-COLUMNS=4
+COLUMNS=7
 COUNT=0
 for FILE in `ls -1 ${FOLDER} | grep ".mt$"`; do
  #check
