@@ -81,7 +81,7 @@ if (isset($_POST['BUTTON']))
          //print_r(explode("-",$_POST['BUTTON']));
          //echo "</pre>";
          $DIR=getcwd();
-         shell_exec("pushd .. 2>&1 > /dev/null && UPDATE.sh ${DIR}/${pressed[0]}.mt} 2>&1 >> /dev/null && popd 2>&1 > /dev/null");
+         shell_exec("pushd .. 2>&1 > /dev/null && UPDATE.sh ${DIR}/${pressed[0]}.mt 2>&1 >> /dev/null && popd 2>&1 > /dev/null");
          echo "<meta http-equiv='refresh' content='0'>";
     }
     
