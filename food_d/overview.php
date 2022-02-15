@@ -15,10 +15,10 @@ table {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 2vmin;
+    font-size: 1.5vmin;
     cursor: default;
-    width: 18vmin;
-    height: 18vmin;
+    width: 12vmin;
+    height: 12vmin;
 }
 .button2 {
     background-color: #608be0;
