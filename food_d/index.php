@@ -10,7 +10,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 4vmin;
+    font-size: 1vmin;
     font-weight: bold;
     cursor: pointer;
     width: 8em;
