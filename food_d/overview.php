@@ -86,7 +86,7 @@ if (isset($_POST['BUTTON']))
     }
     
 $DIR=getcwd();
-$output = shell_exec("pushd .. 2>&1 > /dev/null && FOLDER_OVERVIEW.sh ${DIR} | sort -rk16 && popd 2>&1 > /dev/null");
+$output = shell_exec("pushd .. 2>&1 > /dev/null && FOLDER_OVERVIEW.sh ${DIR} && popd 2>&1 > /dev/null");
 header("Refresh: 30;");
 echo "<table>";
 echo "${output}";
