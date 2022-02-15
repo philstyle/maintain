@@ -15,7 +15,7 @@ table {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 3vmin;
+    font-size: 2vmin;
     cursor: default;
     width: 18vmin;
     height: 18vmin;
@@ -28,7 +28,7 @@ table {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 3vmin;
+    font-size: 2vmin;
     cursor: pointer;
     width: 16vmin;
     height: 14vmin;
