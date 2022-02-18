@@ -52,10 +52,11 @@ if [ "${WHO}x" = "x" ]; then
 fi
 
 TODAY=`date +%j`
+TODAY=`echo $TODAY | sed 's/^0*//'`
 THIS_SECOND=`date +%s`
 YEAR=`date +%Y`
 YEAR_DIFF=$((YEAR - WHEN_YEAR))
-if [ "${YEAR_DIFF}" -gt "0" ]; then
+if [[ "${YEAR_DIFF}" -gt "0" ]]; then
   ADD=$((YEAR_DIFF * 365))
   TODAY=$((TODAY + ADD))
 fi
