@@ -37,10 +37,12 @@ DATE_TEST=`date -r1 +%s 2> /dev/null` >> /dev/null
 if [ "${DATE_TEST}" != "1" ]; then
  #-r doesn't work, hope --date='@seconds' works
  WHEN_DAY=`date -d@"${WHEN}" +%j`
+ WHEN_DAY=`echo $WHEN_DAY | sed 's/^0*//'`
  WHEN_YEAR=`date -d@"${WHEN}" +%Y`
  PRETTYDATE=`date -d@"${WHEN}" "+%Y-%m-%d %H:%M:%S"`
 else
  WHEN_DAY=`date -r${WHEN} +%j`
+ WHEN_DAY=`echo $WHEN_DAY | sed 's/^0*//'`
  WHEN_YEAR=`date -r${WHEN} +%Y`
  PRETTYDATE=`date -r${WHEN} "+%Y-%m-%d %H:%M:%S"`
 fi
@@ -56,7 +58,7 @@ TODAY=`echo $TODAY | sed 's/^0*//'`
 THIS_SECOND=`date +%s`
 YEAR=`date +%Y`
 YEAR_DIFF=$((YEAR - WHEN_YEAR))
-if [[ "${YEAR_DIFF}" -gt "0" ]]; then
+if [ "${YEAR_DIFF}" -gt "0" ]; then
   ADD=$((YEAR_DIFF * 365))
   TODAY=$((TODAY + ADD))
 fi
